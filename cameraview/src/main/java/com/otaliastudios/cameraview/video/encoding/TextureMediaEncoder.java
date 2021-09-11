@@ -124,7 +124,7 @@ public class TextureMediaEncoder extends VideoMediaEncoder<TextureConfig> {
         } else if (mFrameNumber <= 10) {
             // Always render the first few frames, or muxer fails.
             return true;
-        } else if (getPendingEvents(FRAME_EVENT) > 2) {
+        } else if (getPendingEvents(FRAME_EVENT) > 1) {
             LOG.i("shouldRenderFrame - Dropping, we already have too many pending events:",
                     getPendingEvents(FRAME_EVENT));
             return false;
