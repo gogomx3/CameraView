@@ -161,6 +161,7 @@ public class OverlayLayout extends FrameLayout implements Overlay {
      */
     @Override
     protected boolean drawChild(Canvas canvas, View child, long drawingTime) {
+        if(child==null){return false;}
         LayoutParams params = (LayoutParams) child.getLayoutParams();
         if (params.drawsOn(currentTarget)) {
             LOG.v("Performing drawing for view:", child.getClass().getSimpleName(),
